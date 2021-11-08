@@ -52,6 +52,7 @@ object ClassUtils {
                     try {
                         dexfile.close()
                     } catch (ignore: Throwable) {
+                        //
                     }
                 }
                 parserCtl.countDown()
@@ -69,7 +70,8 @@ object ClassUtils {
     private fun getMultiDexPreferences(context: Context): SharedPreferences {
         return context.getSharedPreferences(
             Constants.PREFS_FILE,
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) Context.MODE_PRIVATE else Context.MODE_PRIVATE or Context.MODE_MULTI_PROCESS
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB)
+                Context.MODE_PRIVATE else Context.MODE_PRIVATE or Context.MODE_MULTI_PROCESS
         )
     }
 

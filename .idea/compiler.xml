@@ -20,7 +20,7 @@
         <module name="TRouter.trouter-compiler" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.7">
+    <bytecodeTargetLevel target="1.8">
       <module name="TRouter.app" target="11" />
       <module name="TRouter.module-login" target="11" />
       <module name="TRouter.trouter-api" target="11" />

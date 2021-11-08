@@ -5,7 +5,7 @@ import android.os.Looper
 import java.util.concurrent.Executor
 import java.util.concurrent.Executors
 
-object ExpandUtils {
+object ThreadExt {
 
     /**
      * 异步线程池
@@ -95,7 +95,7 @@ object ExpandUtils {
 inline fun <reified T> T.task(
     noinline err: ((Throwable) -> Unit) = {},
     noinline run: T.() -> Unit
-) = ExpandUtils.Task(this, err, run)
+) = ThreadExt.Task(this, err, run)
 
 /**
  * 异步任务
@@ -103,9 +103,9 @@ inline fun <reified T> T.task(
 inline fun <reified T> T.doAsync(
     noinline err: ((Throwable) -> Unit) = {},
     noinline run: T.() -> Unit
-): ExpandUtils.Task<T> {
+): ThreadExt.Task<T> {
     val task = task(err, run)
-    ExpandUtils.doAsync(task)
+    ThreadExt.doAsync(task)
     return task
 }
 
@@ -115,9 +115,9 @@ inline fun <reified T> T.doAsync(
 inline fun <reified T> T.onUI(
     noinline err: ((Throwable) -> Unit) = {},
     noinline run: T.() -> Unit
-): ExpandUtils.Task<T> {
+): ThreadExt.Task<T> {
     val task = task(err, run)
-    ExpandUtils.onUI(task)
+    ThreadExt.onUI(task)
     return task
 }
 
@@ -128,8 +128,8 @@ inline fun <reified T> T.delay(
     delay: Long,
     noinline err: ((Throwable) -> Unit) = {},
     noinline run: T.() -> Unit
-): ExpandUtils.Task<T> {
+): ThreadExt.Task<T> {
     val task = task(err, run)
-    ExpandUtils.delay(delay, task)
+    ThreadExt.delay(delay, task)
     return task
 }

@@ -1,7 +1,6 @@
 package com.tokyonth.trouter.core
 
 import android.app.Application
-import com.tokyonth.trouter.core.data.ClassHolder
 import java.lang.RuntimeException
 
 class TRouter {
