@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btn_router).setOnClickListener {
             TRouter.getInstance()
                 .setPath("/login/LoginActivity")
-                .addFiled("Str")
+                .addStringField("info", "TRouter Msg")
                 .navigation()
         }
     }

@@ -16,6 +16,7 @@ import java.util.*
 import java.util.concurrent.CountDownLatch
 import java.util.regex.Pattern
 
+// ARouter
 object ClassUtils {
 
     private val SECONDARY_FOLDER_NAME = "code_cache" + File.separator + "secondary-dexes"
@@ -142,7 +143,7 @@ object ClassUtils {
             } catch (ignore: Exception) {
             }
             Log.i(
-                "打印-->",
+                "TRouter-->",
                 "VM with name " + vmName + if (isMultidexCapable) " has multidex support" else " does not have multidex support"
             )
             return isMultidexCapable

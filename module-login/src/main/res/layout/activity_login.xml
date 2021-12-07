@@ -6,8 +6,8 @@
     tools:context=".LoginActivity">
 
     <TextView
+        android:id="@+id/tv_info"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="我跳过来了" />
+        android:layout_height="match_parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

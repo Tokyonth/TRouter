@@ -12,6 +12,8 @@ class TRouterEngine {
 
         private lateinit var application: Application
 
+        private val intent = Intent()
+
         private var instance: TRouterEngine? = null
 
         private var holder = ClassHolder()
@@ -36,8 +38,8 @@ class TRouterEngine {
         return this
     }
 
-    fun addFiled(vararg any: Any): TRouterEngine {
-
+    fun addStringField(key: String, value: String): TRouterEngine {
+        intent.putExtra(key, value)
         return this
     }
 
@@ -46,7 +48,7 @@ class TRouterEngine {
             val findClassArr = TRouterParser.getFindClassHolder()
             for (classKey in findClassArr.keys) {
                 if (holder.getPath() == classKey) {
-                    val intent = Intent().apply {
+                    intent.apply {
                         setClassName(application.packageName, findClassArr[classKey]!!.className)
                         addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     }

@@ -39,8 +39,8 @@ class TRouter {
         return this
     }
 
-    fun addFiled(vararg any: Any): TRouter {
-        TRouterEngine.getInstance().addFiled(any).build()
+    fun addStringField(key: String, value: String): TRouter {
+        TRouterEngine.getInstance().addStringField(key, value).build()
         return this
     }
 
